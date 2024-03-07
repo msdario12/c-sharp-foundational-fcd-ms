@@ -169,11 +169,11 @@ do
 
           for (int k = 0; k < searchParamsList.Length; k++)
           {
-            for (int j = 5; j > -1; j--)
+            for (int j = 2; j > -1; j--)
             {
               foreach (string icon in searchingIcons)
               {
-                Console.Write($"\rsearching our dog {ourAnimals[i, 3]} for {searchParamsList[k]} {icon}");
+                Console.Write($"\rsearching our dog {ourAnimals[i, 3]} for {searchParamsList[k]} {icon} {j}");
                 Thread.Sleep(100);
               }
             }

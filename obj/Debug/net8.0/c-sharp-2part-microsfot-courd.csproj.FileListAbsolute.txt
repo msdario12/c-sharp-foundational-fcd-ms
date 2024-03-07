@@ -1,0 +1,14 @@
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\bin\Debug\net8.0\c-sharp-2part-microsfot-courd.exe
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\bin\Debug\net8.0\c-sharp-2part-microsfot-courd.deps.json
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\bin\Debug\net8.0\c-sharp-2part-microsfot-courd.runtimeconfig.json
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\bin\Debug\net8.0\c-sharp-2part-microsfot-courd.dll
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\bin\Debug\net8.0\c-sharp-2part-microsfot-courd.pdb
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\obj\Debug\net8.0\c-sharp-2part-microsfot-courd.GeneratedMSBuildEditorConfig.editorconfig
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\obj\Debug\net8.0\c-sharp-2part-microsfot-courd.AssemblyInfoInputs.cache
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\obj\Debug\net8.0\c-sharp-2part-microsfot-courd.AssemblyInfo.cs
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\obj\Debug\net8.0\c-sharp-2part-microsfot-courd.csproj.CoreCompileInputs.cache
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\obj\Debug\net8.0\c-sharp-2part-microsfot-courd.dll
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\obj\Debug\net8.0\refint\c-sharp-2part-microsfot-courd.dll
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\obj\Debug\net8.0\c-sharp-2part-microsfot-courd.pdb
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\obj\Debug\net8.0\c-sharp-2part-microsfot-courd.genruntimeconfig.cache
+G:\PROGRAMACION\c-sharp-2part-microsfot-courd\obj\Debug\net8.0\ref\c-sharp-2part-microsfot-courd.dll

@@ -184,6 +184,12 @@ do
             }
             Console.Write($"\r{new String(' ', Console.BufferWidth)}");
           }
+          if (!noMatchesDog)
+          {
+            Console.WriteLine($"{ourAnimals[i, 3]} ({ourAnimals[i, 0]})");
+            Console.WriteLine($"{ourAnimals[i, 4]}");
+            Console.WriteLine($"{ourAnimals[i, 5]}");
+          }
 
           // #3a iterate submitted characteristic terms and search description for each term
 

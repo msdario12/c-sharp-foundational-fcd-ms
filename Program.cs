@@ -1,18 +1,70 @@
-﻿Random random = new Random();
-int luck = random.Next(100);
+﻿// int[] schedule = { 800, 1200, 1600, 2000 };
+//
+// void DisplayAdjustedTimes(int[] times, int currentGMT, int newGMT)
+// {
+//   int diff = 0;
+//   if (MathF.Abs(newGMT) > 12 || Math.Abs(currentGMT) > 12)
+//   {
+//     Console.WriteLine("Invalid GMT");
+//   }
+//   else if (newGMT <= 0 && currentGMT <= 0 || newGMT >= 0 && currentGMT >= 0)
+//   {
+//     diff = 100 * (Math.Abs(newGMT) - Math.Abs(currentGMT));
+//   }
+//   else
+//   {
+//     diff = 100 * (Math.Abs(newGMT) + Math.Abs(currentGMT));
+//   }
+//   for (int i = 0; i < times.Length; i++)
+//   {
+//     int newTime = ((times[i] + diff)) % 2400;
+//     Console.WriteLine($"{times[i]} -> {newTime}");
+//   }
+// }
+//
+// DisplayAdjustedTimes(schedule, 6, -6);
+// 
+string[] guestList = { "Rebecca", "Nadia", "Noor", "Jonte" };
+string[] rsvps = new string[10];
+int count = 0;
+RSVP("Rebecca");
+RSVP("Nadia", 2, "Nuts");
+RSVP(name: "Linh", partySize: 2, inviteOnly: false);
+RSVP("Tony", allergies: "Jackfruit", inviteOnly: true);
+RSVP("Noor", 4, inviteOnly: false);
+RSVP("Jonte", 2, "Stone fruit", false);
+ShowRSVPs();
 
-string[] text = { "You have much to", "Today is a day to", "Whatever work you do", "This is an ideal time to" };
-string[] good = { "look forward to.", "try new things!", "is likely to succeed.", "accomplish your dreams!" };
-string[] bad = { "fear.", "avoid major decisions.", "may have unexpected outcomes.", "re-evaluate your life." };
-string[] neutral = { "appreciate.", "enjoy time with friends.", "should align with your values.", "get in tune with nature." };
-
-Console.WriteLine("A fortune teller whispers the following words:");
-void tellFortune()
+void RSVP(string name, int partySize = 1, string allergies = "none", bool inviteOnly = true)
 {
-  string[] fortune = (luck > 75 ? good : (luck < 25 ? bad : neutral));
-  for (int i = 0; i < 4; i++)
+  if (inviteOnly)
   {
-    Console.Write($"{text[i]} {fortune[i]} ");
+    // search guestList before adding rsvp
+    bool found = false;
+    foreach (string guest in guestList)
+    {
+      if (guest.Equals(name))
+      {
+        found = true;
+        break;
+      }
+    }
+    if (!found)
+    {
+      Console.WriteLine($"Sorry, {name} is not on the guest list.");
+      return;
+    }
+  }
+
+  rsvps[count] = $"Name: {name}, \tParty Size: {partySize}, \tAllergies: {allergies}";
+  count++;
+}
+
+void ShowRSVPs()
+{
+  Console.WriteLine("\nTotal RSVPs:");
+  for (int i = 0; i < count; i++)
+  {
+    Console.WriteLine(rsvps[i]);
   }
 }
-tellFortune();

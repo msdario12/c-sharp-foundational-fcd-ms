@@ -50,7 +50,9 @@ int food = 0;
 InitializeGame();
 while (!shouldExit)
 {
-  Move();
+  StopGameWhenResize();
+  Move(false, ChangeMovementSpeed());
+  PlayerHasEatenTheFood();
 }
 
 // Returns true if the Terminal was resized 
@@ -90,10 +92,28 @@ void FreezePlayer()
 }
 
 // Reads directional input from the Console and moves the player
-void Move()
+void Move(bool detectNoDirectionalKeys = false, bool activeChangeSpeed = false)
 {
   int lastX = playerX;
   int lastY = playerY;
+
+  // Check for no directional keys
+  if (detectNoDirectionalKeys)
+  {
+    ConsoleKey actualKey = Console.ReadKey(true).Key;
+    bool checkUp = actualKey != ConsoleKey.UpArrow;
+    bool checkDown = actualKey != ConsoleKey.DownArrow;
+    bool checkLeft = actualKey != ConsoleKey.LeftArrow;
+    bool checkRight = actualKey != ConsoleKey.RightArrow;
+    if (checkUp && checkDown && checkLeft && checkRight)
+    {
+      Console.Clear();
+      Console.WriteLine($"The key {actualKey} was pressed, the game is finished.");
+      shouldExit = true;
+    }
+  }
+
+  ActiveFreezePlayer();
 
   switch (Console.ReadKey(true).Key)
   {
@@ -104,10 +124,12 @@ void Move()
       playerY++;
       break;
     case ConsoleKey.LeftArrow:
-      playerX--;
+      playerX = activeChangeSpeed ? playerX - 3 : playerX - 1;
+      // playerX--;
       break;
     case ConsoleKey.RightArrow:
-      playerX++;
+      playerX = activeChangeSpeed ? playerX + 3 : playerX + 1;
+      // playerX++;
       break;
     case ConsoleKey.Escape:
       shouldExit = true;
@@ -128,6 +150,7 @@ void Move()
   // Draw the player at the new location
   Console.SetCursorPosition(playerX, playerY);
   Console.Write(player);
+
 }
 
 // Clears the console, displays the food and player
@@ -137,4 +160,46 @@ void InitializeGame()
   ShowFood();
   Console.SetCursorPosition(0, 0);
   Console.Write(player);
+}
+// Stop the game if the console was resizing
+void StopGameWhenResize()
+{
+  if (TerminalResized())
+  {
+    Console.Clear();
+    Console.WriteLine("Console was resized. Program exiting");
+    shouldExit = true;
+  }
+}
+// Check if the player has eaten the food
+bool PlayerHasEatenTheFood(bool changeAppearance = true, bool showNewFood = true)
+{
+  bool hasIntersected = playerX == foodX && playerY == foodY;
+  if (changeAppearance && hasIntersected)
+  {
+    player = states[food];
+  }
+  if (showNewFood && hasIntersected)
+  {
+    ShowFood();
+  }
+  return hasIntersected;
+}
+
+bool ActiveFreezePlayer()
+{
+  if (player == states[2])
+  {
+    FreezePlayer();
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+bool ChangeMovementSpeed()
+{
+  return player == states[1];
 }

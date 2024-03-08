@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("c-sharp-2part-microsfot-courd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14ee06059aeabfed9cd25a0ead176a9df7e946d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+574eef56cda564f5d486f059aec245cedb6f65d2")]
 [assembly: System.Reflection.AssemblyProductAttribute("c-sharp-2part-microsfot-courd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("c-sharp-2part-microsfot-courd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
